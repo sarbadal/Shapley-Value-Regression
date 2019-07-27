@@ -82,6 +82,8 @@ $` \frac{n!}{k!(n-k)!} = {n \choose k} `$
 
 $`\sqrt{2}`$
 
+<img src="https://render.githubusercontent.com/render/math?math=\frac{n!}{k!(n-k)!} = {n \choose k}">
+
 
 
 
