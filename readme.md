@@ -49,7 +49,7 @@ total value of the game = <img src="https://render.githubusercontent.com/render/
 
 ### Computational details of share of <img src="https://render.githubusercontent.com/render/math?math=$X_j$" width="" height=""> in <img src="https://render.githubusercontent.com/render/math?math=$R^2$" width="" height="">:
 
-|r  | r-1 |x1 |x2 |x3 |x4 |<img src="https://render.githubusercontent.com/render/math?math=$R^2$" width="50" height="">   |K   | operation   | values  | Sum/k     | Grand value |
+|r  | r-1 |x1 |x2 |x3 |x4 |<img src="https://render.githubusercontent.com/render/math?math=$R^2$" width="" height="">   |K   | operation   | values  | Sum/k     | Grand value |
 |---|:----|:--|:--|:--|:--|:-------|:---|:------------|:--------|:----------|:-----------:|
 |4  |     |1  |2  |3  |4  |0.98237 |    |plus         |+0.98237 |           |             |
 |   |3    |   |2  |3  |4  |0.97282 |    |minus        |-0.97282 |           |             |
