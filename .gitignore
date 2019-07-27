@@ -1,0 +1,7 @@
+.idea
+.vscode
+data/
+venv/
+settings/__pycache__/
+models/__pycache__/
+
