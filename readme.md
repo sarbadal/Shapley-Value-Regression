@@ -78,7 +78,9 @@ $R^2 = \sum_{p=1}^{m}S(p) = \sum_{p=1}^{m}(1/m)\sum_{r=1}^{k}\left\{\sum_{c=1}^{
 
 </span>
 
-$$ \frac{n!}{k!(n-k)!} = {n \choose k} $$
+$` \frac{n!}{k!(n-k)!} = {n \choose k} `$
+
+$`\sqrt{2}`$
 
 
 
