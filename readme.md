@@ -79,6 +79,10 @@ $$
 |   |     |   |   |   |   |        |k=1 |Sum/k        |         |0.533948   |             |
 |   |     |   |   |   |   |        |    |Sum(sum/k)/m |         |           |**0.248889** |
 
+## Time Complexity
+
+For estimated execution time and scalability details by number of regressors, see [TIMEComplexity.md](TIMEComplexity.md).
+
 ## Example: Use as a package
 
 Install locally in editable mode from the project root:
