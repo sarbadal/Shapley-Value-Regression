@@ -7,7 +7,6 @@ pth regressor does not appear. Further, let R2(p, r) be the R2 obtained by
 regression of y on X(p,r) and R2(q, r) be the R2 obtained by regression of y on X(q, r).
 """
 
-
 import os
 import itertools
 from typing import Dict, Generator, List, Optional, Sequence, Tuple
@@ -107,15 +106,15 @@ class ShapleyValue:
         print('+--End of Calculation--+')
 
     def _build_contribution_table(self, contributions: Dict[str, float]) -> pd.DataFrame:
-        share_df = pd.DataFrame({'Regressor': ['Share']})
+        rows: List[Dict[str, float]] = []
         total: float = 0
 
         for regressor, contribution in contributions.items():
-            share_df[regressor] = [contribution]
+            rows.append({'Regressor': regressor, 'Share': contribution})
             total += contribution
 
-        share_df['Total'] = [total]
-        return share_df
+        rows.append({'Regressor': 'Total', 'Share': total})
+        return pd.DataFrame(rows)
 
     def _get_contribution_for_regressor(self, x: str, verbose: bool, allvar: bool) -> float:
         return self.get_shapley_contribution_of(x, verbose=verbose, allvar=allvar)[0]
@@ -125,7 +124,6 @@ class ShapleyValue:
             raise ValueError(f'{target_x} is not present in X')
 
     def _get_r2(self, df_X: pd.DataFrame, df_y: pd.DataFrame) -> float:
-
         regr = linear_model.LinearRegression()
         regr.fit(df_X, df_y)
         y_hat = regr.predict(df_X)
