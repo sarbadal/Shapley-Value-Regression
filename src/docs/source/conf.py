@@ -1,0 +1,51 @@
+import os
+import sys
+import time
+ 
+os.environ["TZ"] = "Asia/Kolkata"
+time.tzset()
+
+# Add your package root to PYTHONPATH
+sys.path.insert(0, os.path.abspath('../..'))
+
+def setup(app):
+    app.add_js_file('custom.js')
+
+html_title = 'Shapley Value'
+project = 'Shapley Value'
+copyright = '2026, Sarbadal Pal'
+author = 'Sarbadal Pal'
+release = '0.0.1'
+ 
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+    'myst_parser',
+    'sphinx_togglebutton',
+    'sphinx_copybutton',
+]
+ 
+templates_path = ['_templates']
+exclude_patterns = []
+
+html_context = { 
+    "READTHEDOCS": False,
+    "display_lower_left": False,
+}
+ 
+# html_theme = 'furo'
+html_theme = 'sphinx_rtd_theme'
+html_last_updated_use_utc = False
+html_last_updated_fmt = "%Y-%m-%d %H:%M:%S IST"
+ 
+html_static_path = ['_static']
+html_css_files = [
+    'custom.css',
+    'font.css',
+]
+
+html_allow_unsafe = True
+html_show_sphinx = False
+html_copy_source = False
+html_show_sourcelink = False

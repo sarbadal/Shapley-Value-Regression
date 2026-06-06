@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap");
+
+:root {
+  --font-stack: "Manrope", "Segoe UI", sans-serif;
+  --font-stack--monospace: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+}
+
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-weight: 700;
+}

@@ -1,0 +1,174 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started with Shapley Value Regression &mdash; Shapley Value</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=1ef8b179" />
+      <link rel="stylesheet" type="text/css" href="_static/font.css?v=9d826c1a" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=b59dc8fc"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/custom.js"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="_static/togglebutton.js?v=b8b12719"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex/" />
+    <link rel="search" title="Search" href="search/" />
+    <link rel="next" title="📥 Installation" href="module/installation/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Shapley Value
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="module/installation/">📥 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module/quickstart/">🚀 Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="historical-background/">Historical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shapley-value-regression/">Why Shapley Value Regression?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathematical-foundation/">The Shapley Value Approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison-with-alternative-methods/">Comparison with Alternative Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison-with-alternative-methods/#when-alternative-methods-may-be-preferable">When Alternative Methods May Be Preferable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computational-considerations/">Computational Considerations</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Shapley Value</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Get Started with Shapley Value Regression</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="get-started-with-shapley-value-regression">
+<span id="home"></span><h1>Get Started with Shapley Value Regression<a class="headerlink" href="#get-started-with-shapley-value-regression" title="Link to this heading"></a></h1>
+<p>To get started, you can use the <cite>ShapleyValue</cite> class from the package. Here’s a quick
+example using a built-in dataset:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="module/installation/#installation"><span class="std std-ref">Installation Instructions</span></a></p></li>
+<li><p><a class="reference internal" href="module/quickstart/#quickstart"><span class="std std-ref">Quick Start Guide</span></a></p></li>
+</ul>
+</section>
+<section id="historical-background">
+<h1>Historical Background<a class="headerlink" href="#historical-background" title="Link to this heading"></a></h1>
+<p>Shapley Value Regression is rooted in cooperative game theory, introduced by
+Leonard Shapley in 1953. It addresses a fairness question: when outcomes are
+created jointly, how should credit be shared? The Shapley value answers this
+by averaging each participant’s contribution across all possible coalitions.</p>
+<p><a class="reference internal" href="historical-background/#historical-background"><span class="std std-ref">Historical Background</span></a></p>
+</section>
+<section id="why-shapley-value-regression">
+<h1>Why Shapley Value Regression?<a class="headerlink" href="#why-shapley-value-regression" title="Link to this heading"></a></h1>
+<p>Shapley Value Regression provides an alternative perspective by allocating model
+explanatory power among predictors using principles from cooperative game
+theory. It is especially useful when predictors are correlated and share information,
+as traditional methods can be misleading in such cases.</p>
+<p><a class="reference internal" href="shapley-value-regression/#shapley-value-regression"><span class="std std-ref">Why Shapley Value Regression?</span></a></p>
+</section>
+<section id="the-shapley-value-approach">
+<h1>The Shapley Value Approach<a class="headerlink" href="#the-shapley-value-approach" title="Link to this heading"></a></h1>
+<p>Shapley Value Regression treats each predictor as a participant in a
+cooperative game. The total explanatory power of the model is the reward that
+must be distributed among all predictors.</p>
+<p><a class="reference internal" href="mathematical-foundation/#mathematical-foundation"><span class="std std-ref">The Shapley Value Approach</span></a></p>
+</section>
+<section id="comparison-with-alternative-methods">
+<h1>Comparison with Alternative Methods<a class="headerlink" href="#comparison-with-alternative-methods" title="Link to this heading"></a></h1>
+<p>Shapley Value Regression is often preferred when understanding variable
+contribution is more important than computational efficiency. It provides a fair
+allocation of explanatory power, especially when predictors are correlated and share information.</p>
+<p><a class="reference internal" href="comparison-with-alternative-methods/#comparison-with-alternative-methods"><span class="std std-ref">Comparison with Alternative Methods</span></a></p>
+</section>
+<section id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h1>
+<p>Shapley Value Regression does not replace traditional regression analysis.
+Instead, it provides an additional perspective on how explanatory power should
+be attributed among predictors.</p>
+<p>While the method is computationally more expensive than coefficient-based approaches,
+it offers a principled and theoretically grounded solution to one of the most challenging
+problems in regression analysis:</p>
+<p><strong>How should explanatory power be fairly distributed when predictors share information?</strong></p>
+<p>For models with a manageable number of predictors, Shapley Value Regression can provide
+insights that are often difficult to obtain using traditional importance measures alone.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="module/installation/" class="btn btn-neutral float-right" title="📥 Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Sarbadal Pal.
+      <span class="lastupdated">Last updated on 2026-06-06 16:12:20 IST.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historical Background &mdash; Shapley Value</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=1ef8b179" />
+      <link rel="stylesheet" type="text/css" href="../_static/font.css?v=9d826c1a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=b59dc8fc"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/custom.js"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=b8b12719"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Why Shapley Value Regression?" href="../shapley-value-regression/" />
+    <link rel="prev" title="Historical Background" href="../" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Shapley Value
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Historical Background</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#from-cooperative-games-to-regression-analysis">From Cooperative Games to Regression Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analogy-between-game-theory-and-regression">Analogy Between Game Theory and Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-this-matters">Why This Matters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shapley-value-regression/">Why Shapley Value Regression?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathematical-foundation/">The Shapley Value Approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comparison-with-alternative-methods/">Comparison with Alternative Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comparison-with-alternative-methods/#when-alternative-methods-may-be-preferable">When Alternative Methods May Be Preferable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../computational-considerations/">Computational Considerations</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Shapley Value</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Historical Background</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="historical-background">
+<span id="id1"></span><h1>Historical Background<a class="headerlink" href="#historical-background" title="Link to this heading"></a></h1>
+<p>The idea behind Shapley Value Regression comes from <em>cooperative game theory</em>,
+a branch of mathematics that studies how groups of participants work together
+and how the resulting reward should be distributed.</p>
+<p>The concept was introduced by <a class="reference external" href="https://en.wikipedia.org/wiki/Lloyd_Shapley">Lloyd Shapley</a> in 1953.</p>
+<p>In cooperative games, several players contribute to a common objective. Once
+that objective is achieved, a central question appears:</p>
+<p>How should the total reward be fairly distributed among participants?</p>
+<p>This is harder than it first seems, because value is often created by both
+individual effort and collaboration.</p>
+<p>For example, imagine three business partners jointly generating a profit of
+$1,000,000. Determining how much of that outcome was produced by each person is
+difficult, because part of the value is created only through cooperation.</p>
+<p>Shapley’s solution was mathematically rigorous and conceptually simple:</p>
+<p>Measure each player’s contribution when joining every possible coalition, then
+average those contributions across all coalition orderings.</p>
+<p>The resulting allocation is called the <em>Shapley value</em>.</p>
+<section id="from-cooperative-games-to-regression-analysis">
+<h2>From Cooperative Games to Regression Analysis<a class="headerlink" href="#from-cooperative-games-to-regression-analysis" title="Link to this heading"></a></h2>
+<p>Researchers later recognized that the same allocation problem appears in
+statistical modeling.</p>
+<p>In regression, predictors work together to explain variation in a target
+variable. Just as players cooperate to generate a reward in a game, predictors
+cooperate to generate explanatory power in a model.</p>
+<p>This leads to an analogous question:</p>
+<p>If multiple predictors jointly explain the target variable, how much credit
+should each predictor receive?</p>
+<p>The issue is especially important when predictors are correlated and share
+information, for example:</p>
+<ul class="simple">
+<li><p>income and education</p></li>
+<li><p>age and work experience</p></li>
+<li><p>advertising spend and brand awareness</p></li>
+</ul>
+<p>Traditional regression coefficients do not directly provide a fair allocation of
+shared explanatory power. The Shapley framework addresses this gap.</p>
+<p>By treating predictors as players and model performance as the reward, Shapley
+values allocate explanatory power in a principled and interpretable way.</p>
+</section>
+<section id="analogy-between-game-theory-and-regression">
+<h2>Analogy Between Game Theory and Regression<a class="headerlink" href="#analogy-between-game-theory-and-regression" title="Link to this heading"></a></h2>
+<p>The mapping between cooperative game theory and regression is natural:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cooperative game theory</p></th>
+<th class="head"><p>Regression analysis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Player</p></td>
+<td><p>Predictor variable</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coalition of players</p></td>
+<td><p>Subset of predictors</p></td>
+</tr>
+<tr class="row-even"><td><p>Reward</p></td>
+<td><p>Model performance (typically <span class="math notranslate nohighlight">\(R^2\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Player contribution</p></td>
+<td><p>Predictor contribution</p></td>
+</tr>
+<tr class="row-even"><td><p>Fair reward allocation</p></td>
+<td><p>Variable-importance allocation</p></td>
+</tr>
+</tbody>
+</table>
+<p>Under this interpretation, each predictor receives credit based on its average
+contribution across all possible subsets of predictors.</p>
+<p>This ensures variables are credited both for their standalone effect and for the
+value they add through interaction with other predictors.</p>
+</section>
+<section id="why-this-matters">
+<h2>Why This Matters<a class="headerlink" href="#why-this-matters" title="Link to this heading"></a></h2>
+<p>Historically, the Shapley framework was not originally designed for statistics
+or machine learning. It was developed to solve a fundamental fairness problem:</p>
+<p>How should value be allocated when multiple contributors jointly create an
+outcome?</p>
+<p>Because variable importance in regression is fundamentally the same type of
+allocation problem, the Shapley framework creates a strong bridge between game
+theory and statistical modeling.</p>
+<p>Today, Shapley-based methods are widely used in:</p>
+<ul class="simple">
+<li><p>regression analysis</p></li>
+<li><p>explainable artificial intelligence (XAI)</p></li>
+<li><p>feature attribution</p></li>
+<li><p>machine learning interpretation</p></li>
+<li><p>economic modeling</p></li>
+<li><p>risk analysis</p></li>
+<li><p>scientific research</p></li>
+</ul>
+<p>More than seventy years after its introduction, the Shapley value remains one
+of the most influential and theoretically grounded methods for attributing
+contributions among cooperating participants, whether those participants are
+players in a game or predictors in a statistical model.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../" class="btn btn-neutral float-left" title="Historical Background" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../shapley-value-regression/" class="btn btn-neutral float-right" title="Why Shapley Value Regression?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Sarbadal Pal.
+      <span class="lastupdated">Last updated on 2026-06-06 14:02:27 IST.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
