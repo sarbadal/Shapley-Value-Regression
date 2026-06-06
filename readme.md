@@ -1,9 +1,8 @@
-[![Docs](https://readthedocs.org/projects/shapley-value-regression/badge/?version=latest)](https://shapley-value-regression.readthedocs.io/)
-
 # Shapley Value Regression
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+[![Docs](https://readthedocs.org/projects/shapley-value-regression/badge/?version=latest)](https://shapley-value-regression.readthedocs.io/)
 
 
 # Introduction:
