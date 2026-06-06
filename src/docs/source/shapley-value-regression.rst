@@ -1,7 +1,7 @@
 .. _shapley-value-regression:
 
-Why Shapley Value Regression?
-=============================
+Why Shapley Value Regression
+============================
 
 When building a regression model, one of the most common questions is:
 

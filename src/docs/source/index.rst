@@ -12,9 +12,10 @@ Historical Background
 =====================
 
 Shapley Value Regression is rooted in cooperative game theory, introduced by 
-Leonard Shapley in 1953. It addresses a fairness question: when outcomes are 
-created jointly, how should credit be shared? The Shapley value answers this 
-by averaging each participant's contribution across all possible coalitions.
+`Lloyd Shapley <https://en.wikipedia.org/wiki/Lloyd_Shapley>`_ in 1953. It addresses 
+a fairness question: when outcomes are created jointly, how should credit be shared? 
+The Shapley value answers this by averaging each participant's contribution 
+across all possible coalitions.
 
 :ref:`Historical Background <historical-background>`
 
