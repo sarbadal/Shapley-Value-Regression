@@ -77,6 +77,10 @@ across subset sizes, followed by averaging within each subset size and then
 across all sizes.
 
 .. csv-table:: Worked example for a focal regressor
+  :class: compact-table
+  :widths: 4 4 3 3 3 3 8 4 8 7 7 7
+  :width: 100%
+  :align: center
   :header: "r", "r-1", "x1", "x2", "x3", "x4", ":math:`R^2`", "K", "operation", "values", "Sum/k", "Grand value"
 
   "4", "", "1", "2", "3", "4", "0.98237", "", "plus", "+0.98237", "", ""

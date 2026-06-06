@@ -43,6 +43,7 @@ html_static_path = ['_static']
 html_css_files = [
     'custom.css',
     'font.css',
+    'compact_table.css',
 ]
 
 html_allow_unsafe = True
