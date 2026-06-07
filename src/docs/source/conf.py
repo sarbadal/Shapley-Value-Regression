@@ -11,11 +11,15 @@ sys.path.insert(0, os.path.abspath('../..'))
 def setup(app):
     app.add_js_file('custom.js')
 
+html_logo = "_static/logo.png"
 html_title = 'Shapley Value'
 project = 'Shapley Value'
 copyright = '2026, Sarbadal Pal'
 author = 'Sarbadal Pal'
 release = '0.0.1'
+html_theme_options = {
+    "sidebar_hide_name": False,  # hide "Sarbadal Pal" text in sidebar brand
+}
  
 extensions = [
     'sphinx.ext.autodoc',
@@ -44,6 +48,7 @@ html_css_files = [
     'custom.css',
     'font.css',
     'compact_table.css',
+    'logo.css',
 ]
 
 html_allow_unsafe = True
