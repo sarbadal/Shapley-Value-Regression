@@ -23,7 +23,7 @@ class ShapleyValue:
         self.df: pd.DataFrame = df.copy()
         self.__X: List[str] = self._validate_x(X)
         self.__y: str = self._validate_y(y)
-
+        self.__r2_cache: Dict[Tuple[str, ...], float] = {}
 
     @property
     def X(self) -> List[str]:
@@ -64,13 +64,11 @@ class ShapleyValue:
 
     def _build_target_rows(self, r: int, xcombo: Sequence[str], target_x: str) -> List[Dict[str, float]]:
         target_row = self._build_base_row(r, xcombo)
-        target_row['R2'] = self._get_r2(self.df[list(xcombo)], self.df[[self.y]])
+        target_row['R2'] = self._get_r2_for_columns(xcombo)
 
         xcombo_wt_target = [x for x in xcombo if x != target_x]
         wt_target_row = self._build_base_row(r, xcombo_wt_target)
-        wt_target_row['R2'] = 0 if len(xcombo_wt_target) == 0 else -self._get_r2(
-            self.df[xcombo_wt_target], self.df[[self.y]]
-        )
+        wt_target_row['R2'] = 0 if len(xcombo_wt_target) == 0 else -self._get_r2_for_columns(xcombo_wt_target)
 
         return [target_row, wt_target_row]
 
@@ -93,7 +91,7 @@ class ShapleyValue:
 
     def _calculate_contribution(self, out_df: pd.DataFrame) -> Tuple[float, float]:
         contribution: float = out_df['values'].sum()
-        total: float = self._get_r2(self.df[self.X], self.df[[self.y]])
+        total: float = self._get_r2_for_columns(self.X)
 
         return contribution, total
 
@@ -129,6 +127,13 @@ class ShapleyValue:
         y_hat = regr.predict(df_X)
 
         return r2_score(df_y, y_hat)
+
+    def _get_r2_for_columns(self, columns: Sequence[str]) -> float:
+        key = tuple(columns)
+        if key not in self.__r2_cache:
+            self.__r2_cache[key] = self._get_r2(self.df[list(columns)], self.df[[self.y]])
+
+        return self.__r2_cache[key]
 
     def get_shapley_contribution(self, verbose: bool = True, allvar: bool = True) -> pd.DataFrame:
         """
