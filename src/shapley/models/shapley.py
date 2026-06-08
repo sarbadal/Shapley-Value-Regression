@@ -1,10 +1,11 @@
 """
 An algorithm to impute the contribution of individual variables to Shapley value:
 
-Let there be m number of regressor variables in the model y=Xβ+u. Let X(p, r) be the r-membered subset
-of X in which the pth regressor appears and X(q, r) be the r-membered subset of X in which the
-pth regressor does not appear. Further, let R2(p, r) be the R2 obtained by
-regression of y on X(p,r) and R2(q, r) be the R2 obtained by regression of y on X(q, r).
+Let there be m number of regressor variables in the model y=Xβ+u. Let X(p, r) 
+be the r-membered subset of X in which the pth regressor appears and X(q, r) be 
+the r-membered subset of X in which the pth regressor does not appear. Further, 
+let R2(p, r) be the R2 obtained by regression of y on X(p,r) and R2(q, r) be the 
+R2 obtained by regression of y on X(q, r).
 """
 
 import os

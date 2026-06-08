@@ -58,3 +58,6 @@ Example (efficiency):
 
 These properties make Shapley values one of the most theoretically justified
 methods for variable-importance decomposition.
+
+- :ref:`Class Reference <class_shapley_value_regression>`
+- :ref:`Back to Home <home>`

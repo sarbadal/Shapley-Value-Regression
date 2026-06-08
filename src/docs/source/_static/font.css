@@ -7,9 +7,23 @@
 
 body {
   font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+}
+
+html {
+  font-size: 14px; /* default is usually 16px */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Manrope", "Segoe UI", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+h1 { font-size: 1.7rem; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.15rem; }
+
+.rst-content .highlight pre,
+.rst-content pre.literal-block {
+  font-size: 0.82rem;
 }

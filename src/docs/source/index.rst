@@ -70,6 +70,7 @@ insights that are often difficult to obtain using traditional importance measure
 
    module/installation
    module/quickstart
+   module/class-ref
    historical-background
    shapley-value-regression
    mathematical-foundation

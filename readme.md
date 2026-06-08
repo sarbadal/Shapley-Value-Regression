@@ -1,4 +1,5 @@
 # Shapley Value Regression
+![Shapley Value Logo](https://raw.githubusercontent.com/sarbadal/Shapley-Value-Regression/main/src/docs/source/_static/logo.png)
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)

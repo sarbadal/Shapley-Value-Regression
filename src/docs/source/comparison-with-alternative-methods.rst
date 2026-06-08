@@ -5,6 +5,7 @@ Comparison with Alternative Methods
 
 .. list-table::
    :header-rows: 1
+   :class: list-compact-table
 
    * - Method
      - Computational cost
@@ -50,3 +51,6 @@ Alternative methods may be more appropriate when:
  
 In such cases, methods such as permutation importance, approximate SHAP algorithms, 
 or other scalable feature attribution techniques may be more practical.
+
+- :ref:`Class Reference <class_shapley_value_regression>`
+- :ref:`Back to Home <home>`

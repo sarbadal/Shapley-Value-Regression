@@ -1,6 +1,8 @@
 import os
 import sys
 import time
+from docutils import nodes
+from docutils.parsers.rst import roles
  
 os.environ["TZ"] = "Asia/Kolkata"
 time.tzset()
@@ -8,8 +10,8 @@ time.tzset()
 # Add your package root to PYTHONPATH
 sys.path.insert(0, os.path.abspath('../..'))
 
-def setup(app):
-    app.add_js_file('custom.js')
+def method_role(name, rawtext, text, lineno, inliner, options=None, content=None):
+    return [nodes.inline(text=text, classes=["method-name"])], []
 
 html_logo = "_static/logo.png"
 html_title = 'Shapley Value'
@@ -17,9 +19,9 @@ project = 'Shapley Value'
 copyright = '2026, Sarbadal Pal'
 author = 'Sarbadal Pal'
 release = '0.0.1'
-html_theme_options = {
-    "sidebar_hide_name": False,  # hide "Sarbadal Pal" text in sidebar brand
-}
+# html_theme_options = {
+#     "sidebar_hide_name": False,  # hide "Sarbadal Pal" text in sidebar brand
+# }
  
 extensions = [
     'sphinx.ext.autodoc',
@@ -49,6 +51,7 @@ html_css_files = [
     'font.css',
     'compact_table.css',
     'logo.css',
+    'source_code.css',
 ]
 
 html_allow_unsafe = True

@@ -66,13 +66,13 @@ You can also pass your own DataFrame directly, as long as selected feature colum
 
 	# User-provided dataset
 	df = pd.DataFrame(
-		 {
-			  "sq_feet": [950, 1100, 1300, 1600, 1800, 2100],
-			  "age_years": [20, 15, 12, 10, 8, 5],
-			  "bedrooms": [2, 2, 3, 3, 4, 4],
-			  "distance_km": [8.0, 7.2, 6.5, 5.0, 4.0, 3.0],
-			  "price_usd": [220000, 250000, 290000, 340000, 390000, 450000],
-		 }
+	  {
+	    "sq_feet": [950, 1100, 1300, 1600, 1800, 2100],
+	    "age_years": [20, 15, 12, 10, 8, 5],
+	    "bedrooms": [2, 2, 3, 3, 4, 4],
+	    "distance_km": [8.0, 7.2, 6.5, 5.0, 4.0, 3.0],
+	    "price_usd": [220000, 250000, 290000, 340000, 390000, 450000],
+	  }
 	)
 
 	X = ["sq_feet", "age_years", "bedrooms", "distance_km"]
@@ -88,4 +88,7 @@ You can also pass your own DataFrame directly, as long as selected feature colum
 	sq_feet_share, sq_feet_details = sv.get_shapley_contribution_of("sq_feet")
 	print("sq_feet share:", sq_feet_share)
 	print(sq_feet_details.head())
+
+- :ref:`Class Reference <class_shapley_value_regression>`
+- :ref:`Back to Home <home>`
 

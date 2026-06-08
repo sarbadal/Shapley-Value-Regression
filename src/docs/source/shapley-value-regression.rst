@@ -110,3 +110,5 @@ In this 4-variable example, the final average share for the focal variable is
 For scalability implications of this enumeration strategy, see
 :doc:`computational-considerations`.
 
+- :ref:`Class Reference <class_shapley_value_regression>`
+- :ref:`Back to Home <home>`

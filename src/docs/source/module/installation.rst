@@ -11,4 +11,6 @@ To install **shapley-value-regression**, simply run:
 
 This will install the latest version of the package from PyPI.
 
-:ref:`Back to Home <home>`
+- :ref:`Quickstart Guide <quickstart>`
+- :ref:`Class Reference <class_shapley_value_regression>`
+- :ref:`Back to Home <home>`

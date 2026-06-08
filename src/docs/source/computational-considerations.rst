@@ -93,3 +93,6 @@ Notes
   performance, and hardware.
 - In this implementation, repeated fits on overlapping subsets are not cached,
   so measured times can vary, but the growth trend remains exponential.
+
+- :ref:`Class Reference <class_shapley_value_regression>`
+- :ref:`Back to Home <home>`

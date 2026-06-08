@@ -113,4 +113,7 @@ More than seventy years after its introduction, the Shapley value remains one
 of the most influential and theoretically grounded methods for attributing
 contributions among cooperating participants, whether those participants are
 players in a game or predictors in a statistical model.
+
+- :ref:`Class Reference <class_shapley_value_regression>`
+- :ref:`Back to Home <home>`
  
