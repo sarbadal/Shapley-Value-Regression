@@ -8,6 +8,7 @@ regression of y on X(p,r) and R2(q, r) be the R2 obtained by regression of y on 
 """
 
 import os
+import sys
 import itertools
 from typing import Dict, Generator, List, Optional, Sequence, Tuple
 
@@ -15,6 +16,7 @@ import pandas as pd
 from sklearn import linear_model
 from sklearn.metrics import r2_score
 from tabulate import tabulate
+from tqdm import tqdm
 
 
 class ShapleyValue:
@@ -135,7 +137,7 @@ class ShapleyValue:
 
         return self.__r2_cache[key]
 
-    def get_shapley_contribution(self, verbose: bool = True, allvar: bool = True) -> pd.DataFrame:
+    def get_shapley_contribution(self, verbose: bool = True, show_progress: bool = True, allvar: bool = True) -> pd.DataFrame:
         """
         Given data, X and y; it calculates the contribution of each regressor.
         """
@@ -143,7 +145,19 @@ class ShapleyValue:
             self._print_header()
 
         contributions: Dict[str, float] = {}
-        for x in self.X:
+        x_iter = tqdm(
+            self.X,
+            total=len(self.X),
+            desc="Shapley by regressor",
+            unit="var",
+            disable=not show_progress,
+            file=sys.stdout,      # key: avoid buffered stderr
+            mininterval=0.0,      # force frequent refresh
+            miniters=1,
+            dynamic_ncols=False,  # more stable in some VS Code terminals
+            leave=True,
+        )
+        for x in x_iter:
             contributions[x] = self._get_contribution_for_regressor(x, verbose=verbose, allvar=allvar)
 
         share_of_individual_regressors = self._build_contribution_table(contributions)
@@ -153,7 +167,7 @@ class ShapleyValue:
 
         return share_of_individual_regressors
 
-    def get_shapley_contribution_of(self, target_x: str, verbose: bool = False, allvar: bool = False) -> Tuple[float, pd.DataFrame]:
+    def get_shapley_contribution_of(self, target_x: str, verbose: bool = False, show_progress: bool = True, allvar: bool = False) -> Tuple[float, pd.DataFrame]:
         """
         It takes a list of words (or x variables) and creates
         a possible combination of x-var combi for regression.
@@ -161,12 +175,27 @@ class ShapleyValue:
         self._validate_target_x(target_x)
 
         rows: List[Dict[str, float]] = []
+        total_steps = 2 ** (len(self.X) - 1)  # number of subsets containing target_x
+        pbar = tqdm(
+            total=total_steps,
+            desc=f"Target={target_x}",
+            unit="combo",
+            disable=not show_progress,
+            file=sys.stdout,
+            mininterval=0.0,
+            miniters=1,
+            dynamic_ncols=False,
+            leave=False,
+            position=1,  # if you keep nested bars
+        )
+
         for r, xcombo in self._iter_target_combinations(target_x):
             rows.extend(self._build_target_rows(r, xcombo, target_x))
+            pbar.update(1)
+        pbar.close()
 
         out_df = pd.DataFrame(rows)
         out_df = self._compute_shapley_values(out_df)
-
         contribution, total = self._calculate_contribution(out_df)
 
         if verbose:

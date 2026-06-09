@@ -28,10 +28,10 @@ def main() -> None:
     target = dataset_info["target"]
 
     sv = ShapleyValue(df, features, target)
-    # contribution_all = sv.get_shapley_contribution(verbose=False)
-    focus_x_contribution, _ = sv.get_shapley_contribution_of(target_x="Distance_Metro_KM", verbose=False)
+    # contribution_all = sv.get_shapley_contribution(verbose=False, show_progress=True, allvar=True)
+    focus_x_contribution, _ = sv.get_shapley_contribution_of(target_x=features[0], verbose=False)
     # print(contribution_all)
-    print(f"Contribution of 'Distance_Metro_KM': {focus_x_contribution}")
+    print(f"Contribution of '{features[0]}': {focus_x_contribution}")
 
 
 if __name__ == "__main__":
