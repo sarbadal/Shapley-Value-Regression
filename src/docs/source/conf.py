@@ -14,8 +14,8 @@ def method_role(name, rawtext, text, lineno, inliner, options=None, content=None
     return [nodes.inline(text=text, classes=["method-name"])], []
 
 html_logo = "_static/logo.png"
-html_title = 'Shapley Value'
-project = 'Shapley Value'
+html_title = 'Shapley Regression'
+project = 'Shapley Regression'
 copyright = '2026, Sarbadal Pal'
 author = 'Sarbadal Pal'
 release = '0.0.1'

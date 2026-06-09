@@ -9,7 +9,7 @@
 .sidebar-brand .sidebar-brand-text { font-size: 2rem !important; }
 
 .logo {
-  /* border-radius: 50%; */
+  border-radius: 50%;
   max-height: 160px;
   width: auto;
 }

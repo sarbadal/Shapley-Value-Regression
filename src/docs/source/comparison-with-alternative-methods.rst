@@ -40,7 +40,7 @@ Shapley Value Regression is often preferred when understanding variable
 contribution is more important than computational efficiency.
 
 When Alternative Methods May Be Preferable
-==========================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Alternative methods may be more appropriate when:
  
