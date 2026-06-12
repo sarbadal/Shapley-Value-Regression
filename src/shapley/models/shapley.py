@@ -22,6 +22,7 @@ class ContributionRow(TypedDict):
     Regressor: str
     Share: float
 
+
 class ShapleyValue:
 
     def __init__(self, df: pd.DataFrame, X: Sequence[str], y: str) -> None:
