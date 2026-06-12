@@ -10,13 +10,17 @@ R2 obtained by regression of y on X(q, r).
 
 import os
 import itertools
-from typing import Dict, Generator, List, Optional, Sequence, Tuple
+from typing import Dict, Generator, List, Optional, Sequence, Tuple, TypedDict
 
 import pandas as pd
 from sklearn import linear_model
 from sklearn.metrics import r2_score
 from tabulate import tabulate
 
+
+class ContributionRow(TypedDict):
+    Regressor: str
+    Share: float
 
 class ShapleyValue:
 
@@ -105,7 +109,7 @@ class ShapleyValue:
         print('+--End of Calculation--+')
 
     def _build_contribution_table(self, contributions: Dict[str, float]) -> pd.DataFrame:
-        rows: List[Dict[str, float]] = []
+        rows: List[ContributionRow] = []
         total: float = 0
 
         for regressor, contribution in contributions.items():
